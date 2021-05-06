@@ -18,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOe-ra-VA2">
-                                <rect key="frame" x="20" y="818" width="374" height="44"/>
+                                <rect key="frame" x="20" y="821" width="374" height="41"/>
                                 <color key="backgroundColor" name="AccentColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -42,23 +42,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="V2N-mn-xVB">
+                                <rect key="frame" x="197" y="704" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcm-tA-Wgj">
+                                <rect key="frame" x="20" y="757" width="374" height="41"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Grouped Threading">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="doGroupButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gCB-os-72f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YEt-Ki-mcT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2U9-it-5Y2"/>
+                            <constraint firstItem="V2N-mn-xVB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5wn-Ac-stu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YEt-Ki-mcT" secondAttribute="trailing" constant="20" id="JYv-Od-w9u"/>
+                            <constraint firstItem="EOe-ra-VA2" firstAttribute="top" secondItem="pcm-tA-Wgj" secondAttribute="bottom" constant="23" id="JsG-CU-ghN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RHw-dy-EJf" secondAttribute="trailing" constant="20" id="MAg-Kp-zlc"/>
                             <constraint firstItem="EOe-ra-VA2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RdH-Ps-wCx"/>
                             <constraint firstItem="YEt-Ki-mcT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SfL-dp-Smi"/>
+                            <constraint firstItem="pcm-tA-Wgj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="buq-qW-pLU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EOe-ra-VA2" secondAttribute="bottom" id="jNG-0A-b5x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EOe-ra-VA2" secondAttribute="trailing" constant="20" id="lGF-D0-OyH"/>
+                            <constraint firstItem="pcm-tA-Wgj" firstAttribute="top" secondItem="V2N-mn-xVB" secondAttribute="bottom" constant="33" id="nS1-Ur-HDO"/>
                             <constraint firstItem="RHw-dy-EJf" firstAttribute="top" secondItem="YEt-Ki-mcT" secondAttribute="bottom" constant="291" id="pcX-Iu-tr2"/>
                             <constraint firstItem="RHw-dy-EJf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="rNh-bU-6Ms"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pcm-tA-Wgj" secondAttribute="trailing" constant="20" id="yoT-Ix-Yem"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="resultsTextView" destination="YEt-Ki-mcT" id="3EC-ce-5V9"/>
+                        <outlet property="spinnerView" destination="V2N-mn-xVB" id="BE3-Pc-M6c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
