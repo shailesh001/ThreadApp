@@ -5,6 +5,13 @@
 //  Created by Shailesh Patel on 05/05/2021.
 //  Example of Grand Central Dispatch (GCD) for Multi-Threading
 
+/*
+ This ViewController demonstrates the use of Grand Central Dispatch (GCD) to perform
+ multi-threading in an iOS application. It provides examples of both single-threaded
+ and multi-threaded execution for simulating data fetching, processing, and calculations,
+ showcasing how to update the UI appropriately on the main thread.
+ */
+
 import UIKit
 
 /// ViewController demonstrates single-threaded and multi-threaded execution using Grand Central Dispatch (GCD).
@@ -15,6 +22,7 @@ class ViewController: UIViewController {
     /// Text view to display results (connected via storyboard)
     @IBOutlet weak var resultsTextView: UITextView!
     
+    /// Initial UI setup: configure spinner to hide when stopped
     override func viewDidLoad() {
         super.viewDidLoad()
         // Hide spinner when not animating for better UX
@@ -69,14 +77,21 @@ class ViewController: UIViewController {
         let startTime = NSDate()
         // Clear previous results and start spinner
         self.resultsTextView.text = ""
+        // Start animating spinner to show activity
         spinnerView.startAnimating()
         // Use a global background queue
         let queue = DispatchQueue.global(qos: .default)
         queue.async {
-            // Fetch, process, and calculate results sequentially
+            // Fetch data from server (blocking 2 sec delay)
             let fetchedData = self.fetchSomethingFromServer()
+            
+            // Process fetched data (blocking 2 sec delay)
             let processedData = self.processData(input: fetchedData)
+            
+            // Calculate first result (blocking 3 sec delay)
             let firstResult = self.calculateFirstResult(processedData)
+            
+            // Calculate second result (blocking 4 sec delay)
             let secondResult = self.calculateSecondResult(processedData)
             let thirdResult = self.calculateThirdResult(processedData)
             let resultsSummary = "First: [\(firstResult)]\nSecond: [\(secondResult)]\nThird: [\(thirdResult)]"
@@ -101,13 +116,17 @@ class ViewController: UIViewController {
         let startTime = Date()
         // Clear previous results and start spinner
         self.resultsTextView.text = ""
+        // Start animating spinner to show activity
         spinnerView.startAnimating()
         // Use a global background queue
         let queue = DispatchQueue.global(qos: .default)
         queue.async {
-            // Fetch and process data sequentially
+            // Fetch data from server (blocking 2 sec delay)
             let fetchData = self.fetchSomethingFromServer()
+            
+            // Process fetched data (blocking 2 sec delay)
             let processedData = self.processData(input: fetchData)
+            
             var firstResult: String!
             var secondResult: String!
             var thirdResult: String!
@@ -118,6 +137,7 @@ class ViewController: UIViewController {
                 firstResult = self.calculateFirstResult(processedData)
             }
             
+            // Run second calculation in parallel within DispatchGroup
             queue.async(group: group) {
                 secondResult = self.calculateSecondResult(processedData)
             }
