@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,18 @@
 		F22BACD22642A3A500D8661E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F22BACD02642A3A500D8661E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F21C9D222E4C976B00B78885 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F22BACBA2642A3A400D8661E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F22BACC12642A3A400D8661E;
+			remoteInfo = ThreadApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F21C9D1E2E4C976B00B78885 /* ThreadAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreadAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22BACC22642A3A400D8661E /* ThreadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22BACC52642A3A400D8661E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F22BACC72642A3A400D8661E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +37,18 @@
 		F22BACD32642A3A500D8661E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F21C9D1F2E4C976B00B78885 /* ThreadAppTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ThreadAppTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		F21C9D1B2E4C976B00B78885 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F22BACBF2642A3A400D8661E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				F22BACC42642A3A400D8661E /* ThreadApp */,
+				F21C9D1F2E4C976B00B78885 /* ThreadAppTests */,
 				F22BACC32642A3A400D8661E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				F22BACC22642A3A400D8661E /* ThreadApp.app */,
+				F21C9D1E2E4C976B00B78885 /* ThreadAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +94,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F21C9D1D2E4C976B00B78885 /* ThreadAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F21C9D262E4C976B00B78885 /* Build configuration list for PBXNativeTarget "ThreadAppTests" */;
+			buildPhases = (
+				F21C9D1A2E4C976B00B78885 /* Sources */,
+				F21C9D1B2E4C976B00B78885 /* Frameworks */,
+				F21C9D1C2E4C976B00B78885 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F21C9D232E4C976B00B78885 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F21C9D1F2E4C976B00B78885 /* ThreadAppTests */,
+			);
+			name = ThreadAppTests;
+			packageProductDependencies = (
+			);
+			productName = ThreadAppTests;
+			productReference = F21C9D1E2E4C976B00B78885 /* ThreadAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F22BACC12642A3A400D8661E /* ThreadApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F22BACD62642A3A500D8661E /* Build configuration list for PBXNativeTarget "ThreadApp" */;
@@ -97,6 +144,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					F21C9D1D2E4C976B00B78885 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = F22BACC12642A3A400D8661E;
+					};
 					F22BACC12642A3A400D8661E = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -116,11 +167,19 @@
 			projectRoot = "";
 			targets = (
 				F22BACC12642A3A400D8661E /* ThreadApp */,
+				F21C9D1D2E4C976B00B78885 /* ThreadAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F21C9D1C2E4C976B00B78885 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F22BACC02642A3A400D8661E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +193,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F21C9D1A2E4C976B00B78885 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F22BACBE2642A3A400D8661E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +211,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F21C9D232E4C976B00B78885 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F22BACC12642A3A400D8661E /* ThreadApp */;
+			targetProxy = F21C9D222E4C976B00B78885 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F22BACCB2642A3A400D8661E /* Main.storyboard */ = {
@@ -166,6 +240,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F21C9D242E4C976B00B78885 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84P4DVBKVP;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = digitalmagic.ThreadAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThreadApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ThreadApp";
+			};
+			name = Debug;
+		};
+		F21C9D252E4C976B00B78885 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84P4DVBKVP;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = digitalmagic.ThreadAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThreadApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ThreadApp";
+			};
+			name = Release;
+		};
 		F22BACD42642A3A500D8661E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,6 +447,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F21C9D262E4C976B00B78885 /* Build configuration list for PBXNativeTarget "ThreadAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F21C9D242E4C976B00B78885 /* Debug */,
+				F21C9D252E4C976B00B78885 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F22BACBD2642A3A400D8661E /* Build configuration list for PBXProject "ThreadApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
