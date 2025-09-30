@@ -68,6 +68,14 @@ class ViewController: UIViewController {
         Thread.sleep(forTimeInterval: 5)
         return "Third result for: \(data)"
     }
+    
+    /// Simulates a fourth calculation with a 10-second delay.
+    /// - Parameter data: The input string to process.
+    /// - Returns: A string indicating the fourth result was calculated.
+    func calculateFourthResult(_ data: String) -> String {
+        Thread.sleep(forTimeInterval: 10)
+        return "Fourth result for: \(data)"
+    }
 
     /// Action for single-threaded execution.
     /// Runs all tasks sequentially on a background queue and updates the UI when done.
@@ -88,13 +96,13 @@ class ViewController: UIViewController {
             // Process fetched data (blocking 2 sec delay)
             let processedData = self.processData(input: fetchedData)
             
-            // Calculate first result (blocking 3 sec delay)
             let firstResult = self.calculateFirstResult(processedData)
             
             // Calculate second result (blocking 4 sec delay)
             let secondResult = self.calculateSecondResult(processedData)
             let thirdResult = self.calculateThirdResult(processedData)
-            let resultsSummary = "First: [\(firstResult)]\nSecond: [\(secondResult)]\nThird: [\(thirdResult)]"
+            let fourthResult = self.calculateFourthResult(processedData)
+            let resultsSummary = "First: [\(firstResult)]\nSecond: [\(secondResult)]\nThird: [\(thirdResult)]\nFourth: [\(fourthResult)]"
             
             // Update UI on main thread after all work is done
             DispatchQueue.main.async {
@@ -130,6 +138,7 @@ class ViewController: UIViewController {
             var firstResult: String!
             var secondResult: String!
             var thirdResult: String!
+            var fourthResult: String!
             let group = DispatchGroup()
             
             // Run all three calculations in parallel using DispatchGroup
@@ -146,9 +155,13 @@ class ViewController: UIViewController {
                 thirdResult = self.calculateThirdResult(processedData)
             }
             
+            queue.async(group: group) {
+                fourthResult = self.calculateFourthResult(processedData)
+            }
+            
             // Notify when all calculations are done
             group.notify(queue: queue) {
-                let resultsSummary = "First: [\(firstResult!)]\nSecond: [\(secondResult!)]\nThird: [\(thirdResult!)]"
+                let resultsSummary = "First: [\(firstResult!)]\nSecond: [\(secondResult!)]\nThird: [\(thirdResult!)]\nFourth: [\(fourthResult!)]"
                 // Update UI on main thread
                 DispatchQueue.main.async {
                     self.resultsTextView.text = resultsSummary
